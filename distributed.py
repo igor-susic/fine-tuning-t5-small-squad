@@ -70,7 +70,7 @@ def load_dataset_and_preprocess(path: str, tokenizer) -> SQuADDataset:
                 
                 # We will take only one answer example
                 list_of_answers = example.get("answers")
-                answer = list_of_answers[0].get("text") if len(list_of_answers) > 0 else ""
+                answer = list_of_answers[0].get("text") if len(list_of_answers) > 0 else "<pad>"
                 
                 q = f"question: {question}"
                 ctx = f"context: {context}"
